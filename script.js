@@ -22,3 +22,16 @@ document.querySelectorAll('[data-amazon]').forEach(a => {
 document.querySelectorAll('[data-book-link]').forEach(a => {
   a.addEventListener('click', () => trackBookEvent('ClickBook', a.dataset.bookLink, a.href));
 });
+
+
+// Carrossel automático de avaliações da home.
+document.querySelectorAll('[data-review-carousel]').forEach(carousel => {
+  const slides=[...carousel.querySelectorAll('[data-review-slide]')];
+  const dotsWrap=carousel.querySelector('.review-dots');
+  if(slides.length<2) return;
+  let current=0, timer;
+  const dots=slides.map((_,i)=>{const b=document.createElement('button');b.className='review-dot'+(i===0?' active':'');b.type='button';b.setAttribute('aria-label',`Mostrar avaliação ${i+1}`);b.addEventListener('click',()=>show(i,true));dotsWrap.appendChild(b);return b;});
+  function show(i,restart=false){slides[current].classList.remove('active');dots[current].classList.remove('active');current=i;slides[current].classList.add('active');dots[current].classList.add('active');if(restart){clearInterval(timer);start();}}
+  function start(){timer=setInterval(()=>show((current+1)%slides.length),5200)}
+  carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',start);start();
+});
