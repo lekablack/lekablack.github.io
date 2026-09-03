@@ -1,24 +1,5 @@
-# Site oficial — Leka Black
+# Site Leka Black — V9
 
-Site estático pronto para GitHub Pages.
+Atualizações: novo hero comercial; prova social; seção Lista VIP preparada para futura integração de e-mail; próximo lançamento Jovens & Selvagens; Kindle Unlimited nos 5 livros; páginas de degustação provisórias; reviews selecionadas; canal do WhatsApp; CTA da autora para Instagram.
 
-## Estrutura
-- `index.html`: página principal
-- `style.css`: estilos compartilhados
-- `script.js`: menu e estrutura de tracking
-- `assets/img/`: capas e fotos
-- `livros/<slug>/index.html`: páginas individuais
-
-## Publicação
-Envie todo o conteúdo desta pasta para a raiz do repositório `leticiablack.github.io`.
-
-## TikTok Pixel
-O `script.js` já contém eventos preparados:
-- `ViewContent` ao abrir uma página de livro
-- `ClickBook` ao clicar em um livro no site
-- `ClickAmazon` ao clicar em “Comprar na Amazon”
-
-O snippet oficial do TikTok Pixel ainda deve ser inserido quando o Pixel ID for criado.
-
-
-V5: páginas internas usam caminhos relativos para CSS, JS e imagens, evitando perda de estilo no GitHub Pages.
+A lista VIP está visualmente pronta, mas desabilitada até a integração com um serviço de e-mail. Os textos Lorem Ipsum das degustações devem ser substituídos pelos trechos reais.
