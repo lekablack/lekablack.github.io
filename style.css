@@ -251,3 +251,30 @@ body>header .nav{height:90px;display:grid;grid-template-columns:285px 1fr 160px;
   .hero h1.hero-headline > .hero-mixed{gap:6px!important;white-space:normal!important;flex-wrap:wrap!important}
   .contact-email{font-size:12px!important}
 }
+
+/* V15 — centralização do contato e ícone oficial simplificado do WhatsApp */
+.social-strip .shell{text-align:center}
+.contact-email{margin:0 auto 14px!important}
+.whatsapp-icon-svg{width:42px;height:42px;display:block;color:#55c77a}
+.whatsapp-mark{display:flex;align-items:center;justify-content:center}
+.whatsapp-mark .whatsapp-icon-svg{width:46px;height:46px}
+
+
+/* V16 — fechamento comercial das páginas de degustação */
+.sample-buy{margin:34px 0 44px;padding:30px 26px;text-align:center;border:1px solid rgba(189,131,54,.42);border-radius:14px;background:radial-gradient(circle at 50% 0%,rgba(129,28,60,.22),transparent 58%),rgba(255,255,255,.018)}
+.sample-buy h2,.sample-more h2{margin:7px 0 10px;color:#e3ba76;font:600 30px/1.08 'Cormorant Garamond',serif}
+.sample-buy p,.sample-more>p{margin:0 auto 20px!important;max-width:560px;color:#bcae9d!important;font:400 13px/1.65 Montserrat,sans-serif!important}
+.sample-buy-btn{display:inline-flex;justify-content:center;align-items:center;margin:5px auto 10px;min-height:45px}
+.sample-buy .ku-inline{display:block;width:max-content;max-width:100%;margin:10px auto 0}
+.sample-more{margin:0 -12px;padding:34px 12px 10px;text-align:center;border-top:1px solid rgba(189,131,54,.2)}
+.sample-rec-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin-top:24px}
+.sample-rec-card{display:flex;flex-direction:column;min-width:0;text-decoration:none;border:1px solid rgba(189,131,54,.2);border-radius:10px;overflow:hidden;background:#090a0e;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.sample-rec-card:hover{transform:translateY(-4px);border-color:rgba(217,170,91,.7);box-shadow:0 12px 28px rgba(0,0,0,.32)}
+.sample-rec-card img,.sample-placeholder{width:100%;aspect-ratio:2/3;object-fit:cover;background:linear-gradient(145deg,#09090d,#2b0816)}
+.sample-placeholder{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:10px;box-sizing:border-box;color:#d6aa62}
+.sample-placeholder span{font:600 8px Montserrat,sans-serif;letter-spacing:.16em;color:#9f8b76}
+.sample-placeholder strong{margin-top:9px;font:600 18px/.9 'Cormorant Garamond',serif}
+.sample-rec-card>span{padding:11px 8px 4px;color:#ead8bd;font:600 13px/1.08 'Cormorant Garamond',serif}
+.sample-rec-card>small{padding:4px 8px 11px;color:#c9974f;font:600 8px Montserrat,sans-serif;letter-spacing:.08em}
+.sample-footer-actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}
+@media(max-width:760px){.sample-rec-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.sample-buy{padding:26px 18px}.sample-buy h2,.sample-more h2{font-size:26px}.sample-footer-actions{flex-direction:column}.sample-footer-actions .small-cta{width:100%;text-align:center}}

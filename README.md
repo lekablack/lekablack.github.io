@@ -11,3 +11,12 @@ Atualizações desta versão:
 
 
 V14: remove Bluesky; replaces decorative social symbols with recognizable SVG icons; fixes hero typography; underlines social-proof book names; adds mail icon and mailto contact pill.
+
+
+## V15
+- E-mail profissional centralizado na seção Contato.
+- Ícone do WhatsApp corrigido no bloco de destaque.
+
+
+## V16
+As páginas de degustação agora terminam com CTA de compra (ou aviso de lançamento para Jovens & Selvagens) e recomendações das demais degustações.
