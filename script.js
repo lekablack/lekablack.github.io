@@ -24,20 +24,33 @@ document.querySelectorAll('[data-book-link]').forEach(a => {
 });
 
 
-// Galeria horizontal automática de avaliações da home.
+
+// Carrossel automático de avaliações — um card por vez.
 document.querySelectorAll('[data-review-carousel]').forEach(carousel => {
-  const slides=[...carousel.querySelectorAll('[data-review-slide]')];
-  const prev=carousel.querySelector('.review-arrow.prev');
-  const next=carousel.querySelector('.review-arrow.next');
-  if(!slides.length) return;
-  let current=0, timer;
-  function cardStep(){ return slides[0].getBoundingClientRect().width + 16; }
-  function go(i){ current=(i+slides.length)%slides.length; carousel.scrollTo({left:current*cardStep(),behavior:'smooth'}); }
-  prev?.addEventListener('click',()=>{go(current-1); restart();});
-  next?.addEventListener('click',()=>{go(current+1); restart();});
-  function start(){ timer=setInterval(()=>go(current+1),4500); }
-  function restart(){ clearInterval(timer); start(); }
-  carousel.addEventListener('mouseenter',()=>clearInterval(timer));
+  const slides = Array.from(carousel.querySelectorAll('[data-review-slide]'));
+  const prev = carousel.querySelector('.review-arrow.prev');
+  const next = carousel.querySelector('.review-arrow.next');
+  if (!slides.length) return;
+  let current = Math.max(0, slides.findIndex(s => s.classList.contains('active')));
+  let timer;
+  function show(index) {
+    const old = slides[current];
+    const target = (index + slides.length) % slides.length;
+    if (target === current) return;
+    old.classList.add('is-leaving');
+    old.classList.remove('active');
+    current = target;
+    slides[current].classList.remove('is-leaving');
+    slides[current].classList.add('active');
+    window.setTimeout(() => old.classList.remove('is-leaving'), 600);
+  }
+  function start(){ window.clearInterval(timer); timer=window.setInterval(()=>show(current+1),5000); }
+  prev?.addEventListener('click', e=>{e.preventDefault();show(current-1);start();});
+  next?.addEventListener('click', e=>{e.preventDefault();show(current+1);start();});
+  carousel.addEventListener('mouseenter',()=>window.clearInterval(timer));
   carousel.addEventListener('mouseleave',start);
+  carousel.addEventListener('focusin',()=>window.clearInterval(timer));
+  carousel.addEventListener('focusout',start);
+  slides.forEach((slide,i)=>slide.classList.toggle('active',i===current));
   start();
 });
