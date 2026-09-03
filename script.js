@@ -1,21 +1,24 @@
-document.getElementById("year").textContent = new Date().getFullYear();
+const menuBtn = document.querySelector('.menu-btn');
+const nav = document.querySelector('.nav');
+menuBtn?.addEventListener('click', () => nav.classList.toggle('open'));
+document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click',()=>nav.classList.remove('open')));
+document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
-/*
-  EVENTOS DO TIKTOK PIXEL
-  Depois que você instalar seu Pixel, o código abaixo envia eventos
-  quando alguém clica em um livro/CTA.
-
-  O TikTok recomenda usar os eventos oficiais disponíveis na sua conta.
-  Se o código do Pixel ainda não estiver instalado, nada acontece.
-*/
-document.querySelectorAll(".amazon-link").forEach(link => {
-  link.addEventListener("click", () => {
-    const book = link.dataset.book || "livro";
-    if (typeof ttq !== "undefined") {
-      ttq.track("ClickButton", {
-        content_name: book,
-        content_type: "product"
-      });
-    }
-  });
+// Estrutura pronta para analytics/TikTok Pixel.
+// Quando o Pixel estiver instalado, este helper poderá disparar ttq.track(...).
+function trackBookEvent(eventName, bookSlug, destination='') {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({ event:eventName, book:bookSlug, destination });
+  if (window.ttq && typeof window.ttq.track === 'function') {
+    window.ttq.track(eventName, { content_name:bookSlug, destination_url:destination });
+  }
+}
+document.querySelectorAll('[data-book-view]').forEach(el => {
+  trackBookEvent('ViewContent', el.dataset.bookView, location.href);
+});
+document.querySelectorAll('[data-amazon]').forEach(a => {
+  a.addEventListener('click', () => trackBookEvent('ClickAmazon', a.dataset.amazon, a.href));
+});
+document.querySelectorAll('[data-book-link]').forEach(a => {
+  a.addEventListener('click', () => trackBookEvent('ClickBook', a.dataset.bookLink, a.href));
 });
