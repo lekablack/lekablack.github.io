@@ -167,3 +167,50 @@ body>header .nav{height:90px;display:grid;grid-template-columns:285px 1fr 160px;
 .whatsapp-box{box-sizing:border-box;display:grid;grid-template-columns:56px minmax(0,1fr) auto;max-width:1100px;margin:0 auto;gap:28px;align-items:center;padding:30px 34px;border:1px solid rgba(72,190,111,.35);border-radius:16px;background:rgba(33,118,62,.08)}
 .whatsapp-mark{font-size:42px;color:#55c77a}.whatsapp-box h2{margin:4px 0 8px;color:#e8d7bc;font:600 32px/1 'Cormorant Garamond',serif}.whatsapp-box p{margin:0;color:#aeb7ad;font-size:12px;line-height:1.6}.whatsapp-cta{display:inline-flex;align-items:center;justify-content:center;max-width:290px;text-align:center;line-height:1.3;background:linear-gradient(#247642,#15562e)!important;border-color:#4fb873!important;white-space:nowrap}
 @media(max-width:700px){.review-carousel.review-strip{min-height:300px}.review-strip .home-review{min-height:290px;padding:30px 50px}.review-strip .home-review blockquote{font-size:18px}.review-strip .review-arrow.prev{left:8px}.review-strip .review-arrow.next{right:8px}.whatsapp-box{grid-template-columns:1fr;text-align:center;padding:26px 20px}.whatsapp-mark{margin:auto}.whatsapp-cta{width:100%;max-width:100%;white-space:normal}}
+
+/* V13 — refinamentos de hero, prova social, contato e redes */
+.header-inner{grid-template-columns:250px 1fr minmax(300px,390px);gap:14px}
+.header-socials{gap:6px;flex-wrap:nowrap}
+.header-socials a{width:auto;height:33px;padding:0 9px;display:flex;align-items:center;gap:5px;border:1px solid rgba(165,111,45,.7);border-radius:999px;color:#dcc095;font-size:9px;white-space:nowrap;letter-spacing:.02em}
+.header-socials a span{color:#e0b567;font-size:14px;line-height:1}
+.header-socials a:hover{background:rgba(189,131,54,.09);border-color:#c9974f}
+
+.hero-headline{display:flex;flex-direction:column;align-items:flex-start;gap:1px}
+.hero h1.hero-headline .hero-line{display:block;margin:0;color:#efe1c9;font:600 29px/1.07 'Cormorant Garamond',serif;text-transform:uppercase;white-space:nowrap}
+.hero h1.hero-headline .hero-last{display:flex;align-items:baseline;gap:8px}
+.hero h1.hero-headline .hero-last em{display:inline-block;color:#d29a45;font:400 38px/.95 'Allura',cursive;text-transform:none;white-space:nowrap}
+.hero-quote{position:relative;padding:24px 10px 16px;margin:0;text-align:center}
+.hero-quote .quote-text{display:inline-block;position:relative;color:#d8ad62;font:500 17px/1.33 'Cormorant Garamond',serif}
+.hero-quote .quote-text:before,.hero-quote .quote-text:after{position:absolute;color:#b9783b;font:400 35px/1 'Cormorant Garamond',serif}
+.hero-quote .quote-text:before{content:'“';left:-22px;top:-12px}
+.hero-quote .quote-text:after{content:'”';right:-20px;bottom:-13px}
+.hero-quote cite{margin-top:8px}
+
+.proof-book-link{color:#d9b66f;text-decoration:underline;text-decoration-color:rgba(217,182,111,.35);text-underline-offset:3px}
+.proof-book-link:hover{color:#f1cd82;text-decoration-color:#f1cd82}
+.proof-more{display:inline-block;margin-top:11px;color:#d5a85e;font:600 10px Montserrat,sans-serif;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid rgba(213,168,94,.4);padding-bottom:3px}
+.proof-more:hover{color:#f0c774;border-color:#f0c774}
+.contact-intro{text-align:center;margin:0 0 4px;color:#c8b59d;font-size:10px}
+.contact-email{display:block;width:max-content;max-width:100%;margin:0 auto 14px;color:#f0cf96;font:600 14px 'Cormorant Garamond',serif;letter-spacing:.04em;border-bottom:1px solid rgba(240,207,150,.35)}
+.contact-email:hover{color:#fff0c8;border-color:#fff0c8}
+
+@media(max-width:1100px) and (min-width:861px){
+  .header-inner{grid-template-columns:235px 1fr 135px}
+  .header-socials{display:grid;grid-template-columns:repeat(2,1fr);gap:4px}
+  .header-socials a{height:29px;justify-content:center;padding:0 5px;font-size:0}
+  .header-socials a span{font-size:14px}
+  .main-nav{gap:20px;font-size:10px}
+  .hero h1.hero-headline .hero-line{font-size:27px}
+  .hero h1.hero-headline .hero-last em{font-size:34px}
+}
+@media(max-width:860px){
+  .hero-headline{align-items:flex-start}
+  .hero h1.hero-headline .hero-line{font-size:28px;white-space:normal}
+  .hero h1.hero-headline .hero-last{display:flex;flex-wrap:wrap;gap:5px}
+  .hero h1.hero-headline .hero-last em{font-size:38px;white-space:normal}
+}
+@media(max-width:600px){
+  .hero h1.hero-headline .hero-line{font-size:25px}
+  .hero h1.hero-headline .hero-last em{font-size:34px}
+  .contact-email{font-size:13px;word-break:break-word}
+}

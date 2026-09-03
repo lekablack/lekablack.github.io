@@ -1,7 +1,19 @@
 const menuBtn = document.querySelector('.menu-btn');
-const nav = document.querySelector('.nav');
-menuBtn?.addEventListener('click', () => nav.classList.toggle('open'));
-document.querySelectorAll('.navlinks a').forEach(a => a.addEventListener('click',()=>nav.classList.remove('open')));
+const homeHeader = document.querySelector('.header-inner');
+const internalNav = document.querySelector('.nav');
+menuBtn?.addEventListener('click', () => {
+  if (homeHeader) {
+    const open = homeHeader.classList.toggle('menu-open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  } else if (internalNav) {
+    internalNav.classList.toggle('open');
+  }
+});
+document.querySelectorAll('.main-nav a, .navlinks a').forEach(a => a.addEventListener('click',()=>{
+  homeHeader?.classList.remove('menu-open');
+  internalNav?.classList.remove('open');
+  menuBtn?.setAttribute('aria-expanded','false');
+}));
 document.querySelectorAll('[data-year]').forEach(el => el.textContent = new Date().getFullYear());
 
 // Estrutura pronta para analytics/TikTok Pixel.

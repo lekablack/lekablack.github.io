@@ -1,9 +1,10 @@
-# Site Leka Black — V11
+# Site oficial — Leka Black (V13)
 
-Correções: avaliações da home em cards horizontais passáveis/automáticos; CTA de Jovens & Selvagens alterado para Degustação; card do canal do WhatsApp corrigido; Jovens & Selvagens mantido nas páginas de catálogo/todos os livros.
-
-# Site Leka Black — V9
-
-Atualizações: novo hero comercial; prova social; seção Lista VIP preparada para futura integração de e-mail; próximo lançamento Jovens & Selvagens; Kindle Unlimited nos 5 livros; páginas de degustação provisórias; reviews selecionadas; canal do WhatsApp; CTA da autora para Instagram.
-
-A lista VIP está visualmente pronta, mas desabilitada até a integração com um serviço de e-mail. Os textos Lorem Ipsum das degustações devem ser substituídos pelos trechos reais.
+Atualizações desta versão:
+- contato profissional visível: leticiablackescreve@gmail.com;
+- redes sociais identificadas por nome no header desktop;
+- hero reorganizado em três linhas, com “Finais que acendem o coração.” na mesma linha quando houver espaço;
+- aspas da frase lateral transformadas em elementos decorativos para não alterar o alinhamento;
+- prova social com links para Ilha dos Desejos Proibidos, Curvas Perigosas e Todos os Livros;
+- carrossel ampliado com 12 avaliações reais, mantendo 1 card por vez e autoplay;
+- correção do menu mobile da home.
