@@ -8,3 +8,6 @@ Atualizações desta versão:
 - prova social com links para Ilha dos Desejos Proibidos, Curvas Perigosas e Todos os Livros;
 - carrossel ampliado com 12 avaliações reais, mantendo 1 card por vez e autoplay;
 - correção do menu mobile da home.
+
+
+V14: remove Bluesky; replaces decorative social symbols with recognizable SVG icons; fixes hero typography; underlines social-proof book names; adds mail icon and mailto contact pill.

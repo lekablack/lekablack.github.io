@@ -214,3 +214,40 @@ body>header .nav{height:90px;display:grid;grid-template-columns:285px 1fr 160px;
   .hero h1.hero-headline .hero-last em{font-size:34px}
   .contact-email{font-size:13px;word-break:break-word}
 }
+
+
+/* V14 — ícones reconhecíveis, hero estabilizado, prova social e contato */
+.social-svg,.mail-svg{width:18px;height:18px;display:block;flex:0 0 auto}
+.header-socials a .social-svg{color:#e0b567;width:15px;height:15px}
+.header-socials .social-label{font-size:9px;color:#dcc095}
+.social-links a .social-svg{width:22px;height:22px;color:#d9b35f}
+.social-links a[href*="instagram"] .social-svg{color:#e15486}
+.social-links a[href*="tiktok"] .social-svg{color:#f1dfd3}
+.social-links a[href*="whatsapp"] .social-svg{color:#55c77a}
+.socials a .social-svg{width:18px;height:18px;color:#dfb567}
+
+/* Impede a regra antiga .hero h1 span de transformar todo o título em manuscrito */
+.hero h1.hero-headline{display:flex!important;flex-direction:column!important;align-items:flex-start!important;gap:2px!important;margin:0!important;font-family:'Cormorant Garamond',serif!important}
+.hero h1.hero-headline > .hero-line.hero-serif,
+.hero h1.hero-headline .hero-mixed > .hero-serif{display:block!important;margin:0!important;color:#efe1c9!important;font-family:'Cormorant Garamond',serif!important;font-style:normal!important;font-weight:600!important;font-size:29px!important;line-height:1.07!important;letter-spacing:.02em!important;text-transform:uppercase!important}
+.hero h1.hero-headline > .hero-mixed{display:flex!important;align-items:baseline!important;gap:8px!important;margin:0!important;white-space:nowrap!important;color:#efe1c9!important;font-family:'Cormorant Garamond',serif!important}
+.hero h1.hero-headline .hero-mixed > .hero-script{display:inline-block!important;margin:0!important;color:#d29a45!important;font-family:'Allura',cursive!important;font-style:normal!important;font-weight:400!important;font-size:38px!important;line-height:.95!important;letter-spacing:0!important;text-transform:none!important;white-space:nowrap!important}
+
+.proof-book-link{font-style:italic;text-decoration:none!important}
+.proof-book-link span{display:inline;border-bottom:1px solid currentColor;padding-bottom:1px}
+.proof-book-link:hover span{border-bottom-color:#f1cd82}
+
+.contact-email{display:inline-flex!important;align-items:center;justify-content:center;gap:9px;width:auto!important;text-decoration:none;border-bottom:0!important;padding:7px 12px;border:1px solid rgba(240,207,150,.24)!important;border-radius:999px;background:rgba(240,207,150,.035)}
+.contact-email .mail-svg{width:18px;height:18px;color:#e7b966}
+.contact-email:hover{background:rgba(240,207,150,.08);border-color:rgba(255,240,200,.52)!important}
+
+@media(max-width:1100px){
+  .header-socials .social-label{display:none}
+  .header-socials a{width:34px;height:34px;padding:0;justify-content:center}
+}
+@media(max-width:700px){
+  .hero h1.hero-headline > .hero-line.hero-serif,.hero h1.hero-headline .hero-mixed > .hero-serif{font-size:25px!important}
+  .hero h1.hero-headline .hero-mixed > .hero-script{font-size:33px!important}
+  .hero h1.hero-headline > .hero-mixed{gap:6px!important;white-space:normal!important;flex-wrap:wrap!important}
+  .contact-email{font-size:12px!important}
+}
