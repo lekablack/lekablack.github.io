@@ -24,14 +24,20 @@ document.querySelectorAll('[data-book-link]').forEach(a => {
 });
 
 
-// Carrossel automático de avaliações da home.
+// Galeria horizontal automática de avaliações da home.
 document.querySelectorAll('[data-review-carousel]').forEach(carousel => {
   const slides=[...carousel.querySelectorAll('[data-review-slide]')];
-  const dotsWrap=carousel.querySelector('.review-dots');
-  if(slides.length<2) return;
+  const prev=carousel.querySelector('.review-arrow.prev');
+  const next=carousel.querySelector('.review-arrow.next');
+  if(!slides.length) return;
   let current=0, timer;
-  const dots=slides.map((_,i)=>{const b=document.createElement('button');b.className='review-dot'+(i===0?' active':'');b.type='button';b.setAttribute('aria-label',`Mostrar avaliação ${i+1}`);b.addEventListener('click',()=>show(i,true));dotsWrap.appendChild(b);return b;});
-  function show(i,restart=false){slides[current].classList.remove('active');dots[current].classList.remove('active');current=i;slides[current].classList.add('active');dots[current].classList.add('active');if(restart){clearInterval(timer);start();}}
-  function start(){timer=setInterval(()=>show((current+1)%slides.length),5200)}
-  carousel.addEventListener('mouseenter',()=>clearInterval(timer));carousel.addEventListener('mouseleave',start);start();
+  function cardStep(){ return slides[0].getBoundingClientRect().width + 16; }
+  function go(i){ current=(i+slides.length)%slides.length; carousel.scrollTo({left:current*cardStep(),behavior:'smooth'}); }
+  prev?.addEventListener('click',()=>{go(current-1); restart();});
+  next?.addEventListener('click',()=>{go(current+1); restart();});
+  function start(){ timer=setInterval(()=>go(current+1),4500); }
+  function restart(){ clearInterval(timer); start(); }
+  carousel.addEventListener('mouseenter',()=>clearInterval(timer));
+  carousel.addEventListener('mouseleave',start);
+  start();
 });
