@@ -23,3 +23,8 @@ As páginas de degustação agora terminam com CTA de compra (ou aviso de lança
 
 
 V19: textos humanizados no catálogo e páginas dos livros; CTA Conhecer para Jovens & Selvagens na home e recomendações; textos VIP/WhatsApp atualizados em Jovens & Selvagens.
+
+
+## V20
+- Chamada de Jovens & Selvagens atualizada em todas as páginas relevantes.
+- Fonte manuscrita trocada de Allura para Satisfy para melhorar a legibilidade.
