@@ -19,3 +19,6 @@ O `script.js` já contém eventos preparados:
 - `ClickAmazon` ao clicar em “Comprar na Amazon”
 
 O snippet oficial do TikTok Pixel ainda deve ser inserido quando o Pixel ID for criado.
+
+
+V5: páginas internas usam caminhos relativos para CSS, JS e imagens, evitando perda de estilo no GitHub Pages.
