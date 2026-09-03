@@ -95,3 +95,25 @@ body>header .nav{height:90px;display:grid;grid-template-columns:285px 1fr 160px;
   .hero-person img{width:100%;height:100%;object-fit:cover;bottom:auto}
   .about-edited{max-height:305px;width:auto}
 }
+
+/* V6 — página /livros/ */
+.library-page{background:#04070a}
+.library-page body>header .nav{position:relative;z-index:2}
+.library-page .navlinks a.active{color:#d62e5b}
+.library-hero{position:relative;padding:70px 0 58px;text-align:center;overflow:hidden;border-bottom:1px solid var(--line);background:
+ radial-gradient(circle at 50% 0%,rgba(111,21,55,.38),transparent 38%),
+ radial-gradient(circle at 12% 40%,rgba(189,131,54,.08),transparent 24%),
+ linear-gradient(180deg,#09070b,#04070a)}
+.library-hero:before,.library-hero:after{content:"";position:absolute;width:220px;height:220px;border-radius:50%;filter:blur(80px);opacity:.18;background:#a31f47}
+.library-hero:before{left:-80px;top:20px}.library-hero:after{right:-70px;bottom:-90px}
+.library-hero-inner{position:relative;z-index:1}.library-hero h1{margin:8px 0 2px;color:#e0b15f;font:600 clamp(2.8rem,6vw,5rem)/.95 'Cormorant Garamond',serif;letter-spacing:.075em}
+.library-divider{color:#b42750;font:16px/1 'Cormorant Garamond',serif;margin:13px 0 17px}.library-hero p{margin:0;color:#cdbfaa;font:500 14px/1.7 Montserrat,sans-serif}
+.library-list{padding:52px 0 62px;background:radial-gradient(circle at 50% 12%,rgba(75,15,38,.09),transparent 32%)}
+.library-grid{display:grid;gap:27px}
+.library-card{position:relative;display:grid;grid-template-columns:220px 1fr;gap:34px;align-items:center;padding:24px;border:1px solid rgba(189,131,54,.32);border-radius:18px;background:linear-gradient(110deg,rgba(255,255,255,.025),rgba(255,255,255,.008));overflow:hidden;box-shadow:0 18px 48px rgba(0,0,0,.22)}
+.library-card:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 10% 50%,var(--book-glow),transparent 32%);pointer-events:none}
+.library-cover,.library-info{position:relative;z-index:1}.library-cover{display:block;overflow:hidden;border:1px solid var(--book-accent);border-radius:10px;aspect-ratio:940/1500;box-shadow:0 18px 42px rgba(0,0,0,.48)}.library-cover img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease}.library-cover:hover img{transform:scale(1.018)}
+.library-info h2{margin:4px 0 4px;color:var(--book-accent);font:600 2.65rem/1 'Cormorant Garamond',serif}.library-hook{margin:4px 0 15px;color:#e4be81;font:400 1.68rem/1.12 'Allura',cursive}.library-summary{max-width:760px;color:#cec2b3;font-size:13px;line-height:1.72;margin:17px 0}.library-meta{display:flex;gap:10px;flex-wrap:wrap;margin:15px 0 19px}.library-meta span{padding:6px 10px;border:1px solid rgba(189,131,54,.25);border-radius:7px;color:#d8c7ae;background:rgba(0,0,0,.18);font-size:11px;text-transform:uppercase;letter-spacing:.05em}.library-actions{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.library-actions .small-cta{min-width:170px}.library-buy{min-width:190px;padding-inline:18px;background:linear-gradient(90deg,#4d1026,#6a1732 55%,#4f1025)}
+.library-closing{text-align:center;padding:50px 0 58px;border-top:1px solid rgba(189,131,54,.18);background:linear-gradient(180deg,#06080c,#10060b)}.library-closing-mark{color:#cf3158;font-size:26px}.library-closing h2{margin:8px 0;color:#d9aa58;font:600 2rem 'Cormorant Garamond',serif}.library-closing p{margin:0;color:#bfb09d;font-size:13px}
+@media(max-width:860px){.library-card{grid-template-columns:185px 1fr;gap:24px;padding:19px}.library-info h2{font-size:2.15rem}.library-hook{font-size:1.45rem}.library-summary{font-size:12px}.library-page .nav.menu-open .navlinks{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;gap:0;background:#06080c;padding:10px 22px}.library-page .nav.menu-open .navlinks a{padding:12px 0}}
+@media(max-width:600px){.library-hero{padding:48px 0 40px}.library-hero p br{display:none}.library-list{padding:30px 0 42px}.library-card{grid-template-columns:1fr;padding:16px;gap:19px}.library-cover{width:min(72%,250px);margin-inline:auto}.library-info{text-align:center}.library-info .chips,.library-meta,.library-actions{justify-content:center}.library-info h2{font-size:2.2rem}.library-hook{font-size:1.5rem}.library-summary{text-align:left}.library-actions{flex-direction:column}.library-actions .small-cta,.library-buy{width:100%}}
