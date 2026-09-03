@@ -1,4 +1,4 @@
-# Site oficial — Letícia Black
+# Site oficial — Leka Black
 
 Site estático pronto para GitHub Pages.
 
