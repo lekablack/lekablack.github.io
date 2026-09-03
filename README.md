@@ -20,3 +20,6 @@ V14: remove Bluesky; replaces decorative social symbols with recognizable SVG ic
 
 ## V16
 As páginas de degustação agora terminam com CTA de compra (ou aviso de lançamento para Jovens & Selvagens) e recomendações das demais degustações.
+
+
+V19: textos humanizados no catálogo e páginas dos livros; CTA Conhecer para Jovens & Selvagens na home e recomendações; textos VIP/WhatsApp atualizados em Jovens & Selvagens.
